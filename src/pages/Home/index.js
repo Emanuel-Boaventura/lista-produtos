@@ -1,25 +1,52 @@
 import { ReactComponent as TrashIcon } from '../../assets/trash-icon.svg';
 import { ReactComponent as PencilIcon } from '../../assets/pencil-icon.svg';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Pagination from '../../components/Pagination';
 import './index.css';
 import Dialog from '../../components/Dialog';
 import api from '../../api';
+import Loading from '../../components/Loading';
 
-const Home = ({
-  data,
-  dataPerPage,
-  totalData,
-  paginate,
-  currentPage,
-  reload,
-}) => {
+const Home = () => {
   const [dialog, setDialog] = useState(false);
   const [index, setIndex] = useState();
   const [error, setError] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataPerPage] = useState(6);
+
+  async function getData() {
+    try {
+      setLoading(true);
+
+      const { data } = await api.get('/products');
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      setData(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  // Get current data
+  const indexOfLastData = currentPage * dataPerPage;
+  const indexOfFirstData = indexOfLastData - dataPerPage;
+  const currentData = data.slice(indexOfFirstData, indexOfLastData);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  if (loading) return <Loading />;
 
   const handleDelete = async () => {
     try {
@@ -28,7 +55,7 @@ const Home = ({
       await api.delete(`/products/${index}`);
 
       setDialog(false);
-      reload();
+      getData();
     } catch (e) {
       setError(true);
       setLoadingDelete(false);
@@ -60,12 +87,19 @@ const Home = ({
             </tr>
           </thead>
           <tbody>
-            {data.map((itens) => (
+            {currentData.map((itens) => (
               <tr key={itens.id}>
                 <td className='align-left'>{itens.name}</td>
                 <td className='align-left'>{itens.category}</td>
-                <td className='align-right'>R${itens.price}</td>
-                <td className='align-right'>{itens.date}</td>
+                <td className='align-right'>
+                  {Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  }).format(Number(itens.price))}
+                </td>
+                <td className='align-right'>
+                  {Intl.DateTimeFormat('pt-BR').format(new Date(itens.date))}
+                </td>
                 <td className='actions'>
                   <button
                     className='btn-del'
@@ -85,7 +119,7 @@ const Home = ({
           </tbody>
         </table>
         <Pagination
-          totalPages={Math.ceil(totalData / dataPerPage)}
+          totalPages={Math.ceil(data.length / dataPerPage)}
           paginate={paginate}
           currentPage={currentPage}
         />

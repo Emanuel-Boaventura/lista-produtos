@@ -1,116 +1,67 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "banana",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "asd",
+      "category": "asd",
+      "price": "999",
+      "date": "2022-11-19T20:22:55.878Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "maça",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "Banana",
+      "category": "fruta",
+      "price": "10",
+      "date": "2022-11-19T20:23:57.493Z",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "laranja",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "asdasd",
+      "category": "456",
+      "price": "345",
+      "date": "2022-11-19T20:28:55.076Z",
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "alfaçe",
-      "category": "verdura",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "asd",
+      "category": "asd",
+      "price": "123",
+      "date": "2022-11-19T20:37:27.006Z",
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "banana",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "asdasdadssad",
+      "category": "asd",
+      "price": "123",
+      "date": "2022-11-19T20:40:32.088Z",
+      "id": 5
     },
     {
-      "id": 6,
-      "name": "maça",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "dfgs",
+      "category": "dfg",
+      "price": "345",
+      "date": "2022-11-19T20:40:46.279Z",
+      "id": 6
     },
     {
-      "id": 7,
-      "name": "laranja",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "awefa",
+      "category": "sdfs",
+      "price": "1231",
+      "date": "2022-11-19T20:40:52.416Z",
+      "id": 7
     },
     {
-      "id": 8,
-      "name": "alfaçe",
-      "category": "verdura",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "11231",
+      "category": "asda",
+      "price": "123",
+      "date": "2022-11-19T20:46:21.073Z",
+      "id": 8
     },
     {
-      "id": 9,
-      "name": "banana",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 10,
-      "name": "maça",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 11,
-      "name": "laranja",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 12,
-      "name": "alfaçe",
-      "category": "verdura",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 13,
-      "name": "banana",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 14,
-      "name": "maça",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 15,
-      "name": "laranja",
-      "category": "frutas",
-      "price": "9,99",
-      "date": "18/11/2022"
-    },
-    {
-      "id": 16,
-      "name": "alfaçe",
-      "category": "verdura",
-      "price": "9,99",
-      "date": "18/11/2022"
+      "name": "emanuel",
+      "category": "emanuel ",
+      "price": "999",
+      "date": "2022-11-19T20:46:31.469Z",
+      "id": 9
     }
   ]
 }

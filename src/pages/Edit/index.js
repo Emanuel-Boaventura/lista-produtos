@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
 import Loading from '../../components/Loading';
 import api from '../../api';
@@ -10,6 +10,7 @@ const Edit = () => {
   const [price, setPrice] = useState('');
   const [loading, setLoading] = useState(false);
   const { productId } = useParams();
+  const history = useHistory();
 
   async function getData() {
     try {
@@ -35,6 +36,24 @@ const Edit = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    try {
+      setLoading(true);
+
+      await api.patch(`/products/${productId}`, {
+        name,
+        category,
+        price,
+      });
+
+      history.push('/');
+
+      console.log('atualizou');
+    } catch (error) {
+      // COLOCAR UM DIALOG DE ERRO
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (loading) return <Loading />;
@@ -53,6 +72,7 @@ const Edit = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder='Nome...'
+            required
           />
         </label>
         <label className='label-category'>
@@ -62,15 +82,17 @@ const Edit = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             placeholder='Categoria...'
+            required
           />
         </label>
         <label className='label-price'>
           Preço
           <input
-            type='text'
+            type='number'
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder='9.99...'
+            required
           />
         </label>
         <button type='submit' className='btn'>
