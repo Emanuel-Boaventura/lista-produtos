@@ -1,14 +1,18 @@
 import api from './api';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Loading from './pages/Loading';
+import Loading from './components/Loading';
 import Home from './pages/Home';
+import Edit from './pages/Edit';
+import Create from './pages/Create';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(6);
+  const [dataPerPage] = useState(11);
 
   useEffect(() => {
     async function getData() {
@@ -37,13 +41,28 @@ function App() {
   if (loading) return <Loading />;
 
   return (
-    <Home
-      data={currentData}
-      dataPerPage={dataPerPage}
-      totalData={data.length}
-      paginate={paginate}
-      currentPage={currentPage}
-    />
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home
+            data={currentData}
+            dataPerPage={dataPerPage}
+            totalData={data.length}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
+        </Route>
+        <Route path='/edit'>
+          <Edit />
+        </Route>
+        <Route path='/create'>
+          <Create />
+        </Route>
+        <Route path='*'>
+          <NotFound />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

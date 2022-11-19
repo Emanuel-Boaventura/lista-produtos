@@ -19,3 +19,7 @@
 .page-index:hover {
   filter: brightness(70%);
 }
+
+.page-index:active {
+  transform: scale(0.95);
+}

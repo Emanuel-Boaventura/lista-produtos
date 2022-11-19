@@ -17,7 +17,7 @@ const Home = ({ data, dataPerPage, totalData, paginate, currentPage }) => {
             <th className='align-left'>Nome</th>
             <th className='category-item align-left'>Categoria</th>
             <th>Preço</th>
-            <th>Data</th>
+            <th>Data de Criação</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -29,8 +29,8 @@ const Home = ({ data, dataPerPage, totalData, paginate, currentPage }) => {
               <td className='align-right'>R${itens.price}</td>
               <td className='align-right'>{itens.date}</td>
               <td className='actions'>
-                <TrashIcon />
-                <PencilIcon />
+                <TrashIcon className='delete-icon' />
+                <PencilIcon className='edit-icon' />
               </td>
             </tr>
           ))}

@@ -1,4 +1,6 @@
-const Loading = () => {
+const Loading = (isLoading) => {
+  if (!isLoading) return <></>;
+
   return (
     <div className='App'>
       <h1>Carregando...</h1>
