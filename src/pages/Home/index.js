@@ -76,7 +76,7 @@ const Home = ({
                   >
                     <TrashIcon className='delete-icon' />
                   </button>
-                  <Link to='/edit'>
+                  <Link to={`/edit/${itens.id}`}>
                     <PencilIcon className='edit-icon link' />
                   </Link>
                 </td>

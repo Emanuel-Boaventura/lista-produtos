@@ -53,7 +53,7 @@ function App() {
             reload={getData}
           />
         </Route>
-        <Route path='/edit'>
+        <Route path='/edit/:productId'>
           <Edit />
         </Route>
         <Route path='/create'>

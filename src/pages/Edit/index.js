@@ -1,15 +1,43 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
+import Loading from '../../components/Loading';
+import api from '../../api';
 
 const Edit = () => {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { productId } = useParams();
+
+  async function getData() {
+    try {
+      setLoading(true);
+      const {
+        data: { name, category, price },
+      } = await api.get(`/products/${productId}`);
+
+      setName(name);
+      setCategory(category);
+      setPrice(price);
+    } catch (error) {
+      // COLOCAR UM DIALOG DE ERRO
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
   }
+
+  if (loading) return <Loading />;
 
   return (
     <div className='container-centralized'>
