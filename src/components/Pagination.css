@@ -1,0 +1,32 @@
+/* #F7F7FA */
+
+.pagination {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+  font-family: 'Inter';
+}
+
+.page-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7fa;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #4e4e53;
+  transition: all 0.3s;
+}
+
+.page-index:first-child {
+  background-color: #77767e;
+  color: #f7f7fa;
+}
+
+.page-index:hover {
+  filter: brightness(70%);
+}

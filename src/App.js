@@ -1,54 +1,52 @@
-import './App.css';
 import api from './api';
 import { useState, useEffect } from 'react';
+
+import Pagination from './components/Pagination';
 import Loading from './pages/Loading';
+import Home from './pages/Home';
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataPerPage] = useState(6);
 
   async function getData() {
     try {
+      setLoading(true);
       const { data } = await api.get('/produtos');
       setData(data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
+      setLoading(false);
     }
   }
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [setLoading]);
 
-  if (!data) return <Loading />;
+  // Get current data
+  const indexOfLastData = currentPage * dataPerPage;
+  const indexOfFirstData = indexOfLastData - dataPerPage;
+  const currentData = data.slice(indexOfFirstData, indexOfLastData);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  if (loading) return <Loading />;
 
   return (
-    <div className='App'>
-      <header>
-        <h1>Produtos</h1>
-
-        <button>Adicionar Produto</button>
-      </header>
-
-      <div className='list'>
-        <div className='head-list container'>
-          <span className='name'>Nome</span>
-          <span className='category'>Categorias</span>
-          <span className='price'>Preço</span>
-          <span className='date'>Data de Criação</span>
-          <span className='actions'>Ações</span>
-        </div>
-
-        {data.map((itens) => (
-          <div className='products container' key={itens.id}>
-            <span className='name'>{itens.name}</span>
-            <span className='category'>{itens.category}</span>
-            <span className='price'>{itens.price}</span>
-            <span className='date'>{itens.date}</span>
-            <span className='actions'>Editar / Deletar</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <>
+      <Home data={currentData} />
+      <Pagination
+        dataPerPage={dataPerPage}
+        totalData={data.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
+    </>
   );
 }
 

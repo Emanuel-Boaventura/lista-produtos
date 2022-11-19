@@ -27,6 +27,90 @@
       "category": "verdura",
       "price": "9,99",
       "date": "18/11/2022"
+    },
+    {
+      "id": 5,
+      "name": "banana",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 6,
+      "name": "maça",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 7,
+      "name": "laranja",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 8,
+      "name": "alfaçe",
+      "category": "verdura",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 9,
+      "name": "banana",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 10,
+      "name": "maça",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 11,
+      "name": "laranja",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 12,
+      "name": "alfaçe",
+      "category": "verdura",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 13,
+      "name": "banana",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 14,
+      "name": "maça",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 15,
+      "name": "laranja",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 16,
+      "name": "alfaçe",
+      "category": "verdura",
+      "price": "9,99",
+      "date": "18/11/2022"
     }
   ]
 }
