@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
-import './index.css';
 
 const Create = () => {
   const [name, setName] = useState('');
@@ -14,7 +13,7 @@ const Create = () => {
 
   return (
     <div className='container-centralized'>
-      <Link to='/' className='header-title link'>
+      <Link to='/' className='form-title link'>
         <ArrowLeftIcon className='arrow-left-icon' />
         <h2>Adicionar Produto</h2>
       </Link>
@@ -26,6 +25,7 @@ const Create = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder='Nome...'
+            required
           />
         </label>
         <label className='label-category'>
@@ -35,6 +35,7 @@ const Create = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             placeholder='Categoria...'
+            required
           />
         </label>
         <label className='label-price'>
@@ -44,9 +45,12 @@ const Create = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder='9.99...'
+            required
           />
         </label>
-        <button type='submit'>Salvar</button>
+        <button type='submit' className='btn'>
+          Salvar
+        </button>
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-.page-index {
+.pageIndex {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,7 @@
   cursor: pointer;
   color: #4e4e53;
   transition: all 0.3s;
+  border: none;
 }
 
 .selected {
@@ -16,10 +17,15 @@
   color: #f7f7fa;
 }
 
-.page-index:hover {
+.pageIndex:hover {
   filter: brightness(70%);
 }
 
-.page-index:active {
+.pageIndex:active {
   transform: scale(0.95);
+}
+
+.pagination {
+  display: flex;
+  gap: 16px;
 }

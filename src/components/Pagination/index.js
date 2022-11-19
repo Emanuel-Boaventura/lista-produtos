@@ -1,21 +1,25 @@
-import './index.css';
+import css from './index.module.css';
 
-const Pagination = ({ dataPerPage, totalData, paginate, currentPage }) => {
-  const pageNumbers = [];
+const Pagination = ({ totalPages, paginate, currentPage }) => {
+  const pageNumbers = Array.from({ length: totalPages });
 
-  for (let i = 1; i <= Math.ceil(totalData / dataPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  return pageNumbers.map((number) => (
-    <span
-      key={number}
-      onClick={() => paginate(number)}
-      className={currentPage === number ? 'page-index selected' : 'page-index'}
-    >
-      {number}
-    </span>
-  ));
+  return (
+    <div className={css.pagination}>
+      {pageNumbers.map((_, index) => (
+        <button
+          key={index + 1}
+          onClick={() => paginate(index + 1)}
+          className={
+            currentPage === index + 1
+              ? `${css.pageIndex} ${css.selected}`
+              : `${css.pageIndex}`
+          }
+        >
+          {index + 1}
+        </button>
+      ))}
+    </div>
+  );
 };
 
 export default Pagination;

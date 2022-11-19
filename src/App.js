@@ -12,21 +12,21 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(11);
+  const [dataPerPage] = useState(6);
+
+  async function getData() {
+    try {
+      setLoading(true);
+      const { data } = await api.get('/products');
+      setData(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    async function getData() {
-      try {
-        setLoading(true);
-        const { data } = await api.get('/produtos');
-        setData(data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
     getData();
   }, []);
 
@@ -50,6 +50,7 @@ function App() {
             totalData={data.length}
             paginate={paginate}
             currentPage={currentPage}
+            reload={getData}
           />
         </Route>
         <Route path='/edit'>

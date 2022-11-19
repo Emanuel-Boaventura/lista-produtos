@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
-import './index.css';
 
 const Edit = () => {
   const [name, setName] = useState('');
@@ -13,10 +13,10 @@ const Edit = () => {
 
   return (
     <div className='container-centralized'>
-      <h2 className='header-title'>
+      <Link to='/' className='form-title link'>
         <ArrowLeftIcon className='arrow-left-icon' />
-        Editar Produto
-      </h2>
+        <h2>Editar Produto</h2>
+      </Link>
       <form onSubmit={handleSubmit}>
         <label className='label-name'>
           Nome
@@ -45,7 +45,9 @@ const Edit = () => {
             placeholder='9.99...'
           />
         </label>
-        <button type='submit'>Salvar</button>
+        <button type='submit' className='btn'>
+          Salvar
+        </button>
       </form>
     </div>
   );

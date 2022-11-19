@@ -1,6 +1,6 @@
 /* Main Style */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600&display=swap');
 
 * {
   margin: 0;
@@ -11,7 +11,8 @@
 
 body {
   font-family: 'Montserrat';
-  margin: 125px 30px 40px 30px;
+  /* margin: 125px 30px 40px 30px; */
+  margin: 30px;
 }
 
 /* Link Styles */
@@ -23,7 +24,7 @@ body {
 
 /* Button Style */
 
-button {
+.btn {
   background-color: #212121;
   color: #fff;
   padding: 8px 16px;
@@ -36,11 +37,16 @@ button {
   transition: all 0.1s;
 }
 
-button:hover {
-  background-color: black;
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-button:active {
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+.btn:active {
   transform: scale(0.95);
 }
 
@@ -73,7 +79,7 @@ form button {
   padding: 8px 32px;
 }
 
-.header-title {
+.form-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,11 +89,11 @@ form button {
   cursor: pointer;
 }
 
-.header-title h2 {
+.form-title h2 {
   font-size: 24px;
 }
 
-.header-title:hover {
+.form-title:hover {
   text-decoration: underline;
 }
 

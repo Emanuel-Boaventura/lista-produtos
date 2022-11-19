@@ -20,6 +20,7 @@ table {
   font-size: 15px;
   line-height: 20px;
   color: #232326;
+  margin-bottom: 16px;
 }
 
 td,
@@ -64,4 +65,45 @@ tfoot {
   align-items: space;
   justify-content: space-around;
   border: none;
+}
+
+.btn-del {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dialog Styles */
+.dialog p {
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+.div-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  gap: 24px;
+}
+
+.div-btn .cancel {
+  background-color: white;
+  color: #212121;
+  box-shadow: inset 0 0 0 2px #212121;
+}
+
+.div-btn button {
+  padding: 8px 64px;
+}
+
+.error-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 16px;
+  border-radius: 4px;
 }
