@@ -1,21 +1,26 @@
-import './index.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
+import './index.css';
 
 const Create = () => {
   const [name, setName] = useState('');
-  // const [category, setCategory] = useState('');
-  // const [price, setPrice] = useState('');
+  const [category, setCategory] = useState('');
+  const [price, setPrice] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
   }
 
   return (
-    <div className='App'>
-      <h2>Adicionar Produto</h2>
+    <div className='container-centralized'>
+      <Link to='/' className='header-title link'>
+        <ArrowLeftIcon className='arrow-left-icon' />
+        <h2>Adicionar Produto</h2>
+      </Link>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name
+        <label className='label-name'>
+          Nome
           <input
             type='text'
             value={name}
@@ -23,6 +28,25 @@ const Create = () => {
             placeholder='Nome...'
           />
         </label>
+        <label className='label-category'>
+          Categoria
+          <input
+            type='text'
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            placeholder='Categoria...'
+          />
+        </label>
+        <label className='label-price'>
+          Preço
+          <input
+            type='text'
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            placeholder='9.99...'
+          />
+        </label>
+        <button type='submit'>Salvar</button>
       </form>
     </div>
   );

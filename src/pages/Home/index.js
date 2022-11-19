@@ -1,6 +1,8 @@
 import { ReactComponent as TrashIcon } from '../../assets/trash-icon.svg';
 import { ReactComponent as PencilIcon } from '../../assets/pencil-icon.svg';
+
 import Pagination from '../../components/Pagination';
+import './index.css';
 
 const Home = ({ data, dataPerPage, totalData, paginate, currentPage }) => {
   return (
