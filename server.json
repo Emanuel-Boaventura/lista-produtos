@@ -1,0 +1,32 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "name": "banana",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 2,
+      "name": "maça",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 3,
+      "name": "laranja",
+      "category": "frutas",
+      "price": "9,99",
+      "date": "18/11/2022"
+    },
+    {
+      "id": 4,
+      "name": "alfaçe",
+      "category": "verdura",
+      "price": "9,99",
+      "date": "18/11/2022"
+    }
+  ]
+}
