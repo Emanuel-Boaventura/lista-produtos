@@ -36,61 +36,61 @@ button {
   color: #232326;
 }
 
-.container {
-  display: flex;
+tr,
+td,
+th {
+  border: 1px solid black;
+}
+
+table {
+  font-family: 'Inter';
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 4px 8px;
+}
+
+td {
+  text-align: center;
   height: 36px;
-  border: 1px solid #d1cfd7;
 }
 
-.container:not(:last-child) {
-  border-bottom: none;
-}
-
-.head-list {
+th {
   background-color: #f7f7fa;
 }
 
-.name,
-.category,
-.price,
-.date,
-.actions {
+tfoot {
   display: flex;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  border-right: 1px solid #d1cfd7;
-  text-transform: capitalize;
+  padding-top: 15px;
+  gap: 15px;
 }
 
-.name {
-  width: 15%;
-  justify-content: start;
+.align-left {
+  text-align: left;
 }
 
-.category {
+.align-right {
+  text-align: right;
+}
+
+.category-item {
   width: 40%;
-  justify-content: start;
 }
 
-.price {
-  width: 15%;
-}
-
-.products .price {
-  justify-content: end;
-}
-
-.date {
-  width: 15%;
-  justify-content: end;
-}
-
-.products .date {
-  justify-content: end;
+.delete-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .actions {
-  width: 15%;
-  border-right: none;
+  cursor: pointer;
+  display: flex;
+  align-items: space;
+  justify-content: space-around;
+  border: none;
 }

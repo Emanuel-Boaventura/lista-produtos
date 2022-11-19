@@ -1,7 +1,6 @@
 import api from './api';
 import { useState, useEffect } from 'react';
 
-import Pagination from './components/Pagination';
 import Loading from './pages/Loading';
 import Home from './pages/Home';
 
@@ -11,21 +10,21 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage] = useState(6);
 
-  async function getData() {
-    try {
-      setLoading(true);
-      const { data } = await api.get('/produtos');
-      setData(data);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
+    async function getData() {
+      try {
+        setLoading(true);
+        const { data } = await api.get('/produtos');
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
     getData();
-  }, [setLoading]);
+  }, []);
 
   // Get current data
   const indexOfLastData = currentPage * dataPerPage;
@@ -38,15 +37,13 @@ function App() {
   if (loading) return <Loading />;
 
   return (
-    <>
-      <Home data={currentData} />
-      <Pagination
-        dataPerPage={dataPerPage}
-        totalData={data.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
-    </>
+    <Home
+      data={currentData}
+      dataPerPage={dataPerPage}
+      totalData={data.length}
+      paginate={paginate}
+      currentPage={currentPage}
+    />
   );
 }
 

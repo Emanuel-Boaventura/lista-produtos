@@ -1,4 +1,8 @@
-const Home = ({ data }) => {
+import { ReactComponent as TrashIcon } from '../../assets/trash-icon.svg';
+import { ReactComponent as PencilIcon } from '../../assets/pencil-icon.svg';
+import Pagination from '../../components/Pagination';
+
+const Home = ({ data, dataPerPage, totalData, paginate, currentPage }) => {
   return (
     <div className='App'>
       <header className='header'>
@@ -7,25 +11,39 @@ const Home = ({ data }) => {
         <button>Adicionar Produto</button>
       </header>
 
-      <div className='list'>
-        <div className='head-list container'>
-          <span className='name'>Nome</span>
-          <span className='category'>Categorias</span>
-          <span className='price'>Preço</span>
-          <span className='date'>Data de Criação</span>
-          <span className='actions'>Ações</span>
-        </div>
-
-        {data.map((itens) => (
-          <div className='products container' key={itens.id}>
-            <span className='name'>{itens.name}</span>
-            <span className='category'>{itens.category}</span>
-            <span className='price'>R${itens.price}</span>
-            <span className='date'>{itens.date}</span>
-            <span className='actions'>Editar / Deletar</span>
-          </div>
-        ))}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th className='align-left'>Nome</th>
+            <th className='category-item align-left'>Categoria</th>
+            <th>Preço</th>
+            <th>Data</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((itens) => (
+            <tr key={itens.id}>
+              <td className='align-left'>{itens.name}</td>
+              <td className='align-left'>{itens.category}</td>
+              <td className='align-right'>R${itens.price}</td>
+              <td className='align-right'>{itens.date}</td>
+              <td className='actions'>
+                <TrashIcon />
+                <PencilIcon />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <Pagination
+            dataPerPage={dataPerPage}
+            totalData={totalData}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
+        </tfoot>
+      </table>
     </div>
   );
 };
