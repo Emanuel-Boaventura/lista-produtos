@@ -63,6 +63,7 @@ form label {
   flex-direction: column;
   gap: 4px;
   width: 280px;
+  font-size: 14px;
 }
 
 form label input {
@@ -102,12 +103,6 @@ form button {
   width: 24px;
 }
 
-.label-name {
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Shortcut Styles */
 
 .align-left {
@@ -123,4 +118,11 @@ form button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.error-span {
+  color: rgba(255, 0, 0, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  /* font-size: 14px; */
 }

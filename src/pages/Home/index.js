@@ -91,12 +91,7 @@ const Home = () => {
               <tr key={itens.id}>
                 <td className='align-left'>{itens.name}</td>
                 <td className='align-left'>{itens.category}</td>
-                <td className='align-right'>
-                  {Intl.NumberFormat('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                  }).format(Number(itens.price))}
-                </td>
+                <td className='align-right'>{itens.price}</td>
                 <td className='align-right'>
                   {Intl.DateTimeFormat('pt-BR').format(new Date(itens.date))}
                 </td>
