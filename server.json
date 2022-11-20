@@ -83,6 +83,104 @@
       "price": "R$ 2,49",
       "date": "2022-11-20T02:07:11.349Z",
       "id": 15
+    },
+    {
+      "name": "Salada",
+      "category": "Verdura",
+      "price": "R$ 2,55",
+      "date": "2022-11-20T02:26:11.149Z",
+      "id": 16
+    },
+    {
+      "name": "Alfaçe",
+      "category": "Verdura",
+      "price": "R$ 9,99",
+      "date": "2022-11-20T02:26:23.689Z",
+      "id": 17
+    },
+    {
+      "name": "Tomate",
+      "category": "Verdura",
+      "price": "R$ 5,55",
+      "date": "2022-11-20T02:26:36.034Z",
+      "id": 18
+    },
+    {
+      "name": "Beterraba",
+      "category": "verdura",
+      "price": "R$ 123,45",
+      "date": "2022-11-20T02:26:47.224Z",
+      "id": 19
+    },
+    {
+      "name": "Sal",
+      "category": "Tempero",
+      "price": "R$ 1,23",
+      "date": "2022-11-20T02:26:56.903Z",
+      "id": 20
+    },
+    {
+      "name": "Açafrão ",
+      "category": "Tempero",
+      "price": "R$ 4,32",
+      "date": "2022-11-20T02:27:09.232Z",
+      "id": 21
+    },
+    {
+      "name": "Coentro",
+      "category": "Chero-Verde",
+      "price": "R$ 1,23",
+      "date": "2022-11-20T02:27:22.951Z",
+      "id": 22
+    },
+    {
+      "name": "Macarrão",
+      "category": "massas",
+      "price": "R$ 1.242,14",
+      "date": "2022-11-20T02:27:35.312Z",
+      "id": 23
+    },
+    {
+      "name": "Açai",
+      "category": "Sobremesa",
+      "price": "R$ 123,44",
+      "date": "2022-11-20T02:27:44.367Z",
+      "id": 24
+    },
+    {
+      "name": "Presunto",
+      "category": "Alimento",
+      "price": "R$ 433,55",
+      "date": "2022-11-20T02:28:04.158Z",
+      "id": 25
+    },
+    {
+      "name": "Mussarela",
+      "category": "Alimentos",
+      "price": "R$ 653,45",
+      "date": "2022-11-20T02:28:16.716Z",
+      "id": 26
+    },
+    {
+      "name": "Leite",
+      "category": "bebida",
+      "price": "R$ 43,21",
+      "date": "2022-11-20T02:28:32.040Z",
+      "id": 27
+    },
+    {
+      "name": "Água",
+      "category": "bebida",
+      "price": "R$ 43,26",
+      "date": "2022-11-20T02:28:49.871Z",
+      "id": 28
+    },
+    {
+      "name": "Coca-Cola",
+      "category": "bebida",
+      "price": "R$ 97,68",
+      "date": "2022-11-20T02:29:01.889Z",
+      "id": 29
     }
   ]
 }

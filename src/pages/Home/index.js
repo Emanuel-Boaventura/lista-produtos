@@ -18,7 +18,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(4);
+  const [dataPerPage] = useState(16);
 
   async function getData() {
     try {
