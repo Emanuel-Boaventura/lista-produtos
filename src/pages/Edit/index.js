@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
 import Loading from '../../components/Loading';
 import api from '../../api';
@@ -25,16 +27,18 @@ const Edit = () => {
         setName(name);
         setCategory(category);
         setPrice(price);
-      } catch (error) {
-        // COLOCAR UM DIALOG DE ERRO
-        console.error(error);
+      } catch (e) {
+        history.push('/');
+        toast.error('Erro ao carregar o produto.', {
+          toastId: 'customID',
+        });
       } finally {
         setLoading(false);
       }
     }
 
     getData();
-  }, [productId]);
+  }, [history, productId]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -52,9 +56,9 @@ const Edit = () => {
       });
 
       history.push('/');
-    } catch (error) {
-      // COLOCAR UM DIALOG DE ERRO
-      console.error(error);
+      toast.success('Produto editado.');
+    } catch {
+      toast.error('Erro ao editar, tente novamente.');
     } finally {
       setLoading(false);
     }
@@ -65,16 +69,15 @@ const Edit = () => {
     const parsedPrice = Number(price.replace(/[^\d,]/g, '').replace(',', '.'));
 
     if (name.trim().length < 3 || name.trim().length > 50) {
-      newValidateErrors.name = 'Campo Nome deve ter entre 3 e 50 caracteres';
+      newValidateErrors.name = 'Nome deve ter entre 3 e 50 caracteres';
     }
 
     if (category.trim().length < 3 || category.trim().length > 250) {
-      newValidateErrors.category =
-        'Campo Categoria deve ter entre 3 e 50 caracteres';
+      newValidateErrors.category = 'Categoria deve ter entre 3 e 50 caracteres';
     }
 
     if (parsedPrice <= 0) {
-      newValidateErrors.price = 'Campo Preço deve ser um valor válido';
+      newValidateErrors.price = 'Preço deve ser um valor válido';
     }
 
     setValidateErrors(newValidateErrors);

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import api from '../../api';
 import { ReactComponent as ArrowLeftIcon } from '../../assets/arrow-left-icon.svg';
 import Loading from '../../components/Loading';
@@ -30,11 +32,9 @@ const Create = () => {
       });
 
       history.push('/');
-
-      console.log('atualizou');
+      toast.success('Produto adicionado.');
     } catch (error) {
-      // COLOCAR UM DIALOG DE ERRO
-      console.error(error);
+      toast.error('Erro ao adicionar, tente novamente.');
     } finally {
       setLoading(false);
     }
@@ -45,16 +45,15 @@ const Create = () => {
     const parsedPrice = Number(price.replace(/[^\d,]/g, '').replace(',', '.'));
 
     if (name.trim().length < 3 || name.trim().length > 50) {
-      newValidateErrors.name = 'Campo Nome deve ter entre 3 e 50 caracteres';
+      newValidateErrors.name = 'Nome deve ter entre 3 e 50 caracteres';
     }
 
     if (category.trim().length < 3 || category.trim().length > 250) {
-      newValidateErrors.category =
-        'Campo Categoria deve ter entre 3 e 50 caracteres';
+      newValidateErrors.category = 'Categoria deve ter entre 3 e 50 caracteres';
     }
 
     if (parsedPrice <= 0) {
-      newValidateErrors.price = 'Campo Preço deve ser um valor válido';
+      newValidateErrors.price = 'Preço deve ser um valor válido';
     }
 
     setValidateErrors(newValidateErrors);

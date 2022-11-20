@@ -2,6 +2,7 @@ import { ReactComponent as TrashIcon } from '../../assets/trash-icon.svg';
 import { ReactComponent as PencilIcon } from '../../assets/pencil-icon.svg';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import Pagination from '../../components/Pagination';
 import './index.css';
@@ -17,7 +18,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(6);
+  const [dataPerPage] = useState(4);
 
   async function getData() {
     try {
@@ -56,10 +57,10 @@ const Home = () => {
 
       setDialog(false);
       getData();
+      toast.success('Produto excluido.');
     } catch (e) {
       setError(true);
       setLoadingDelete(false);
-      console.log(e);
     } finally {
       setLoadingDelete(false);
     }

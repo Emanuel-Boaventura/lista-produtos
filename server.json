@@ -1,25 +1,11 @@
 {
   "products": [
     {
-      "name": "banana",
-      "category": "fruta",
-      "price": "R$ 9,99",
-      "date": "2022-11-18T20:22:55.878Z",
-      "id": 1
-    },
-    {
       "name": "pera",
       "category": "fruta",
       "price": "R$ 9,99",
       "date": "2022-11-18T20:23:57.493Z",
       "id": 2
-    },
-    {
-      "name": "banana",
-      "category": "fruta",
-      "price": "R$ 9,99",
-      "date": "2022-11-18T20:28:55.076Z",
-      "id": 3
     },
     {
       "name": "laranja",
@@ -34,13 +20,6 @@
       "price": "R$ 9,99",
       "date": "2022-11-18T20:40:32.088Z",
       "id": 5
-    },
-    {
-      "name": "banana",
-      "category": "fruta",
-      "price": "R$ 9,99",
-      "date": "2022-11-19T20:40:46.279Z",
-      "id": 6
     },
     {
       "name": "goiaba",
@@ -72,17 +51,38 @@
     },
     {
       "name": "Cadeira",
-      "category": "Mobilia",
+      "category": "Mobilias",
       "price": "R$ 0,10",
       "date": "2022-11-19T23:33:29.098Z",
       "id": 11
     },
     {
       "name": "RTX 3090",
-      "category": "Eletronico",
+      "category": "Eletronicos",
       "price": "R$ 7.000,00",
       "date": "2022-11-19T23:33:46.234Z",
       "id": 12
+    },
+    {
+      "name": "Mi Band 5",
+      "category": "Relógio",
+      "price": "R$ 250,00",
+      "date": "2022-11-20T01:58:43.104Z",
+      "id": 13
+    },
+    {
+      "name": "Cadeira Gamer",
+      "category": "mobilia de luxo",
+      "price": "R$ 1.234,56",
+      "date": "2022-11-20T02:05:49.288Z",
+      "id": 14
+    },
+    {
+      "name": "Sabonete Intimo",
+      "category": "Higiene",
+      "price": "R$ 2,49",
+      "date": "2022-11-20T02:07:11.349Z",
+      "id": 15
     }
   ]
 }
