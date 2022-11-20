@@ -40,15 +40,6 @@ td::first-letter {
 th {
   background-color: #f7f7fa;
 }
-
-tfoot {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding-top: 15px;
-  gap: 15px;
-}
-
 .category-item {
   width: 40%;
 }

@@ -28,7 +28,7 @@ const Create = () => {
         name,
         category,
         price,
-        date: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
       });
 
       history.push('/');

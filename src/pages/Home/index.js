@@ -25,7 +25,7 @@ const Home = () => {
       setLoading(true);
 
       const { data } = await api.get('/products');
-      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
       setData(data);
     } catch (error) {
@@ -94,7 +94,9 @@ const Home = () => {
                 <td className='align-left'>{itens.category}</td>
                 <td className='align-right'>{itens.price}</td>
                 <td className='align-right'>
-                  {Intl.DateTimeFormat('pt-BR').format(new Date(itens.date))}
+                  {Intl.DateTimeFormat('pt-BR').format(
+                    new Date(itens.createdAt)
+                  )}
                 </td>
                 <td className='actions'>
                   <button
