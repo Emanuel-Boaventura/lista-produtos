@@ -49,7 +49,7 @@ const Edit = () => {
 
       if (numberOfErrors > 0) return;
 
-      await api.patch(`/products/${productId}`, {
+      await api.put(`/products/${productId}`, {
         name,
         category,
         price,

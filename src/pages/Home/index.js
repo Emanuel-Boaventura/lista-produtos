@@ -89,7 +89,7 @@ const Home = () => {
           </thead>
           <tbody>
             {currentData.map((itens) => (
-              <tr key={itens.id}>
+              <tr key={itens._id}>
                 <td className='align-left'>{itens.name}</td>
                 <td className='align-left'>{itens.category}</td>
                 <td className='align-right'>{itens.price}</td>
@@ -103,12 +103,12 @@ const Home = () => {
                     className='btn-del'
                     onClick={() => {
                       setDialog(true);
-                      setIndex(itens.id);
+                      setIndex(itens._id);
                     }}
                   >
                     <TrashIcon className='delete-icon' />
                   </button>
-                  <Link to={`/edit/${itens.id}`}>
+                  <Link to={`/edit/${itens._id}`}>
                     <PencilIcon className='edit-icon link' />
                   </Link>
                 </td>
